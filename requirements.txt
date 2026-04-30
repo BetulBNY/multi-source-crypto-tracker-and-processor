@@ -1,0 +1,6 @@
+requests        # Used to send HTTP requests (GET, POST, etc.) to APIs or websites and fetch data
+pandas          # Data manipulation and analysis library (DataFrames, cleaning, transforming datasets)
+fastapi         # Modern web framework for building APIs with Python (fast, async-ready)
+uvicorn         # ASGI server used to run FastAPI apps (serves your API)
+python-dotenv   # Loads environment variables from a .env file (useful for secrets/config)
+pyarrow         # Efficient columnar data format (Apache Arrow) for fast data processing & file formats like Parquet
