@@ -73,7 +73,7 @@ The pipeline automates the extraction of real-time cryptocurrency data from exte
 
 3. Access the API:
    - **Data Endpoint:** `http://localhost:8000/cryptos`
-   - **Data Endpoint:** http://localhost:8000/cryptos/expensive
+   - **Data Endpoint:** `http://localhost:8000/cryptos/expensive`
    - **Swagger UI (Docs):** `http://localhost:8000/docs`
 
 ---
