@@ -54,8 +54,6 @@ The pipeline automates the extraction of real-time cryptocurrency data from exte
 └── .env                # Environment variables (API URLs, Ports)
 ```
 
----
-
 ## Getting Started
 
 ### Prerequisites
