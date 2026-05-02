@@ -1,0 +1,8 @@
+services:
+  crypto_pipeline:
+    build: .
+    container_name: crypto_project
+    volumes:
+      - .:/app
+    environment:
+    - PYTHONNUNBUFFERED=1

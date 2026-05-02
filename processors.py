@@ -45,12 +45,3 @@ class CryptoProcessor:
         except Exception as e:
             logging.error(f"Error saving to Parquet: {str(e)}") # if there is an error during saving, I am logging the error message to see orchestration tools like Airflow or Prefect and understand what went wrong. This is crucial for debugging and maintaining the data pipeline.
     
-
-
-
-
-
-
-
-
-#url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1"

@@ -15,10 +15,8 @@ class AbstractBaseIngestor(ABC): # This is an abstract base class for data inges
 class CryptoAPIIngestor(AbstractBaseIngestor):
 
     def __init__(self, url:str):
-
         if not url.startswith("http"):
             raise ValueError("Invalid URL provided. URL must start with http or https.")
-        
         self.url = url
 
     @monitor_execution
