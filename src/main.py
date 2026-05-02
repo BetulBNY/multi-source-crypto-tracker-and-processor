@@ -1,12 +1,12 @@
 import logging
 import sys
 import os
-from ingestors import CryptoAPIIngestor
-from processors import CryptoProcessor
+from src.ingestors import CryptoAPIIngestor
+from src.processors import CryptoProcessor
 from dotenv import load_dotenv
 
 def main():
-    print("--- Pipeline Başladı ---")
+    print("--- Pipeline Started ---")
 
     load_dotenv() # Load environment variables from .env file
     url = os.getenv("CRYPTO_API_URL") 
@@ -15,7 +15,7 @@ def main():
 
     ingestor = CryptoAPIIngestor(url)
 
-    print("Veri çekiliyor...")
+    print("Data fetching...")
     data =  ingestor.fetch_data()
 
     if not data:
@@ -28,7 +28,7 @@ def main():
     filtered_df = processor.filter_by_price(min_price_filter) # Im storing the filtered data in a variable for later use.
     processor.save_to_csv("crypto_data.csv")
     processor.save_to_parquet("crypto_partitioned.parquet")
-    print("--- Pipeline Başarıyla Tamamlandı ---")
+    print("--- Pipeline Completed Successfully ---")
 
 if __name__ == "__main__":
     main()

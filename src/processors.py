@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import logging
 import pyarrow
-from decorators import monitor_execution
+from src.decorators import monitor_execution
 
 class CryptoProcessor:
 
