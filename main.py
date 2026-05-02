@@ -10,6 +10,7 @@ def main():
 
     load_dotenv() # Load environment variables from .env file
     url = os.getenv("CRYPTO_API_URL") 
+    
     min_price_filter = float(os.getenv("MIN_PRICE_FILTER", 1000)) 
 
     ingestor = CryptoAPIIngestor(url)

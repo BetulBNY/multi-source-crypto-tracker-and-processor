@@ -11,4 +11,4 @@ COPY . .
 RUN mkdir -p data
 
 # Starting the application:
-CMD ["sh", "-c", "python main.py"]
+CMD ["sh", "-c", "python main.py && uvicorn api:app --host 0.0.0.0 --port ${API_PORT}"]
