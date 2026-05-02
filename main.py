@@ -1,13 +1,17 @@
 import logging
 import sys
+import os
 from ingestors import CryptoAPIIngestor
 from processors import CryptoProcessor
-
+from dotenv import load_dotenv
 
 def main():
     print("--- Pipeline Başladı ---")
 
-    url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1"
+    load_dotenv() # Load environment variables from .env file
+    url = os.getenv("CRYPTO_API_URL") 
+    min_price_filter = float(os.getenv("MIN_PRICE_FILTER", 1000)) 
+
     ingestor = CryptoAPIIngestor(url)
 
     print("Veri çekiliyor...")
@@ -20,7 +24,7 @@ def main():
     processor = CryptoProcessor(data)
 
     processor.clean_data()
-    filtered_df = processor.filter_by_price(1000) # Im storing the filtered data in a variable for later use.
+    filtered_df = processor.filter_by_price(min_price_filter) # Im storing the filtered data in a variable for later use.
     processor.save_to_csv("crypto_data.csv")
     processor.save_to_parquet("crypto_partitioned.parquet")
     print("--- Pipeline Başarıyla Tamamlandı ---")
