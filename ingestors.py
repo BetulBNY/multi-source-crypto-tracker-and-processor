@@ -1,3 +1,5 @@
+from typing import List, Dict, Any
+
 import requests
 import logging
 from abc import ABC, abstractmethod # For creating abstract base classes 
